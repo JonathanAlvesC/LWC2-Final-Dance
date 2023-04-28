@@ -1,14 +1,34 @@
 <template>
-    <lightning-card title="Bololo Company">
+  <lightning-card title="Lista de Oportunidades" icon-name="standard:opportunity">
+    
+    <ul class="slds-has-dividers_around-space slds-var-m-around_medium">
+      
+      <template for:each={opportunities} for:item="opportunity">
+        
+        <li key={opportunity.Id} class="slds-item">
+          
+          <span style="color: rgb(0, 0, 0);">
+            <p><strong>Id: </strong>{opportunity.Id} </p>
+          </span>
+        
+          <span style="color: rgb(0, 0, 0);">
+            <p><strong>Nome: </strong>{opportunity.Name} </p>
+          </span>
 
-        <ul>
-            <!--O componente usa um loop de template for:each para iterar sobre a lista de oportunidades e exibi-las em uma lista não ordenada.-->
-            <template for:each={opportunities} for:item="opp">
-              <li key={opp.Id}>
-                {opp.Id} - {opp.Name} - {opp.Amount} - {opp.StageName} - {opp.CreatedDate}
-              </li>
-            </template>
-          </ul>
+          <span style="color: rgb(0, 0, 0);">
+            <p> <strong>Valor:</strong> R$ {opportunity.Amount}</p>
+          </span>
 
-    </lightning-card>
+          <span style="color: rgb(0, 0, 0);">
+            <p><strong>Fase: </strong>{opportunity.StageName}</p>
+          </span>
+
+          <span style="color: rgb(0, 0, 0);">
+            <p><strong>Criado em: </strong>{opportunity.CreatedDate}</p>
+          </span>
+
+        </li>
+      </template>
+    </ul>
+  </lightning-card>
 </template>
