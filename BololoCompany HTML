@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Bololo Company">
+
+        <ul>
+            <!--O componente usa um loop de template for:each para iterar sobre a lista de oportunidades e exibi-las em uma lista não ordenada.-->
+            <template for:each={opportunities} for:item="opp">
+              <li key={opp.Id}>
+                {opp.Id} - {opp.Name} - {opp.Amount} - {opp.StageName} - {opp.CreatedDate}
+              </li>
+            </template>
+          </ul>
+
+    </lightning-card>
+</template>
